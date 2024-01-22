@@ -1,0 +1,23 @@
+{
+  "name": "practice_1",
+  "version": "1.0.0",
+  "description": "latihan MochaJS for API testing",
+  "main": "index.js",
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "auth": "mocha ./tests/scenarios/login-noPOM.spec.js --timeout 5000",
+    "pom": "mocha ./tests/scenarios/login-POM.spec.js --timeout 5000",
+    "profile": "mocha ./tests/scenarios/get_profile.spec.js --timeout 5000",
+    "loginPOM": "mocha ./tests/scenarios/login-POM.spec.js --timeout 5000",
+    "ctu": "mocha ./tests_ctu/scenarios/createTopupCashPOM.spec.js --timeout 5000",
+    "fakestore": "mocha ./tests_fakeStoreAPI_Products/scenarios/add_update_deleteUsers.spec.js --timeout 5000"
+  },
+  "author": "Mitha",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.4.0",
+    "chai-json-schema": "^1.5.1",
+    "mocha": "^10.2.0"
+  }
+}

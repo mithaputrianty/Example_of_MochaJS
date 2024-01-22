@@ -1,0 +1,46 @@
+MochaJS
+
+1. buat folder <new project>
+2. npm init
+    - input deskripsi sesuai yang diminta
+    - muncul file package.json
+3. npm install --save-dev mocha
+    - muncul folder node_modules
+    - muncul file package-lock.json
+4. npm install chai --save-dev
+    - untuk BDD/TDD assertion
+5. npm install chai-http chai-json-schema --save-dev
+    - untuk apa???
+6. Tambah folder: tests
+7. Di folder tests, tambah 3 folder lagi:
+    - scenarios --> untuk menyimpan scripting scenario
+    - apis --> untuk menyimpan data URL & function untuk memanggil method (post/get/put/patch/delete)
+    - datas --> untuk menyimpan data yang diperlukan (test case, statusCode, heades, payload, parameters)
+
+STEP SCRIPTING.
+Referensi: https://fakestoreapi.com/docs
+
+1. Tambah file api.js di folder apis
+    - panggil chai dan chai-http
+    - buat class --> jangan lupa di export (module.exports)
+        - buat constructor --> define URL-base
+        - buat function --> define setiap method
+2. Tambah file data.js di folder datas
+    - const data --> jangan lupa di export (module.exports)
+    - bikin sebuah array data
+        - case --> title, status
+        - headers
+        - payload
+        - parameters
+3. Tambah file spec.js di folder scenarios
+    - const data
+        - define expect dari chai
+        - define folder api dan data
+    - bikin scenario pakai word: describe
+
+
+STEP RUNNING SCRIPT.
+1. Buka file package.json
+2. Di bagian scripts, kita tambah 1 keyword yg bisa digunakan untuk running script kita 
+    - "getProducts": "mocha ./tests/scenarios/getProducts.spec.js --timeout 5000"
+3. Di Terminal: npm run <keyword>
